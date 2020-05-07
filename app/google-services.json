@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "315690904468",
+    "firebase_url": "https://mpgame-dd9b9.firebaseio.com",
+    "project_id": "mpgame-dd9b9",
+    "storage_bucket": "mpgame-dd9b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315690904468:android:df7f53280407dfb865bd81",
+        "android_client_info": {
+          "package_name": "ro.mirodone.multiplayergame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315690904468-kr1h84snngn26a7ged0un8tmt7vmn711.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVjsEVew0o39u9Lbi4KQVNnYvmhlL4afw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315690904468-kr1h84snngn26a7ged0un8tmt7vmn711.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
