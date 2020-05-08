@@ -62,7 +62,7 @@ public class Main2Activity extends AppCompatActivity {
                 mButton.setText("CREATING ROOM");
                 mButton.setEnabled(false);
                 roomName = playerName;
-                roomRef = mDatabase.getReference("rooms/" + roomName + "/jucator1");
+                roomRef = mDatabase.getReference("rooms/" + roomName + "/player1");
                 addRoomEventListener();
                 roomRef.setValue(playerName);
 

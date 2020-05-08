@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -24,6 +25,8 @@ public class Main3Activity extends AppCompatActivity {
     String role = "";
     String message = "";
 
+    ImageView pokeBall;
+
     FirebaseDatabase database;
     DatabaseReference messageRef;
 
@@ -35,6 +38,9 @@ public class Main3Activity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         button.setEnabled(false);
+
+        pokeBall = findViewById(R.id.imagePoke);
+        pokeBall.setVisibility(View.INVISIBLE);
 
         database = FirebaseDatabase.getInstance();
 
@@ -59,6 +65,8 @@ public class Main3Activity extends AppCompatActivity {
                 //send message
 
                 button.setEnabled(false);
+                pokeBall.setVisibility(View.INVISIBLE);
+
                 message = role + ":Poked!";
                 messageRef.setValue(message);
 
@@ -75,16 +83,21 @@ public class Main3Activity extends AppCompatActivity {
         messageRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//message received
+
+                //message received
                 if (role.equals("host")) {
                     if (dataSnapshot.getValue(String.class).contains("guest:")) {
                         button.setEnabled(true);
+                        pokeBall.setImageResource(R.drawable.p_quick_ball);
+                        pokeBall.setVisibility(View.VISIBLE);
                         Toast.makeText(Main3Activity.this, "" +
                                 dataSnapshot.getValue(String.class).replace("guest:", ""), Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     if (dataSnapshot.getValue(String.class).contains("host:")) {
                         button.setEnabled(true);
+                        pokeBall.setImageResource(R.drawable.p_sports_ball);
+                        pokeBall.setVisibility(View.VISIBLE);
                         Toast.makeText(Main3Activity.this, "" +
                                 dataSnapshot.getValue(String.class).replace("host:", ""), Toast.LENGTH_SHORT).show();
                     }
